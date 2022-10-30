@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="form-main-body">
+      <form
+        class="form-create"
+        action="/blogs/edit/<%=data._id%>"
+        method="post"
+      >
+        <div class="form-title">
+          <input
+            type="text"
+            class="form-title-input"
+            name="title"
+            placeholder="Title"
+            autocomplete="off"
+            minlength="40"
+            maxlength="150"
+            value="<%= data.title %>"
+            required
+          />
+        </div>
+        <div class="form-snippet">
+          <input
+            type="text"
+            class="form-snippet-input"
+            name="snippet"
+            placeholder="Snippet"
+            autocomplete="off"
+            minlength="40"
+            maxlength="150"
+            value="<%= data.snippet %>"
+            required
+          />
+        </div>
+        <div class="form-body">
+          <textarea
+            class="form-body-input"
+            name="body"
+            rows="200"
+            cols="500"
+            placeholder="Body"
+            autocomplete="off"
+            minlength="500"
+            maxlength="10000"
+            required
+          >
+<%= data.body %></textarea
+          >
+        </div>
+        <div class="form-btn">
+          <button class="form-btn-btn">Update</button>
+        </div>
+      </form>
+    </div>
+    <%-include("./partials/footer.ejs") %>
+  </body>
+</html>

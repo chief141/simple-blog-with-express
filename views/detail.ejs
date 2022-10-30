@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  />
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="detail-main">
+      <div class="detail-head">
+        <div class="detail-head-head">
+          <h1 class="detail-head-text"><%= data.title %></h1>
+        </div>
+        <div class="detail-head-btn">
+          <a href="/blogs/edit/<%= data._id %>" class="edit-btn">
+            <button class="detail-edit" title="edit">
+              <i class="material-icons">edit</i>
+            </button>
+          </a>
+          <a data-doc="<%= data._id %>" class="delete-btn">
+            <button class="detail-delete" title="delete">
+              <i class="material-icons">delete</i>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="detail-snippet">
+        <span class="detail-snippet-text"> <%= data.snippet %> </span>
+      </div>
+      <div class="detail-date">
+        <% let date_ = new Date(data.updatedAt); let date_time =
+        `${date_.getDate()}/${date_.getMonth()}/${date_.getFullYear()}`; %>
+        <h6 class="detail-date-text">Modified on <%= date_time %></h6>
+      </div>
+
+      <div class="detail-body">
+        <div class="detail-body-text"><%= data.body %></div>
+      </div>
+    </div>
+    <%-include("./partials/footer.ejs") %>
+    <script>
+      const delete_button = document.querySelector('a.delete-btn');
+      delete_button.addEventListener('click', () => {
+        let ask_delete = confirm('Delete this article?');
+        if (ask_delete) {
+          const endpoint = `/blogs/${delete_button.dataset.doc}`;
+
+          fetch(endpoint, {
+            method: 'DELETE',
+          })
+            .then((res) => {
+              return res.json();
+            })
+            .then((data) => {
+              window.location.href = data.redirect;
+            });
+        }
+      });
+    </script>
+  </body>
+</html>

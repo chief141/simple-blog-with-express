@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Bebas Neue');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+:root {
+  --standard-white: rgb(230, 230, 230);
+  --hover-white: #ffffff;
+  --navbar-standard-white: #b2b2b2;
+  --standard-background-black: #181a1b;
+  --standard-light-background-black: #212425;
+  --hover-text-shadow: rgba(255, 255, 255, 0.7);
+  --blog-border: rgba(7, 255, 247, 0.8);
+  --snippet-text: var(--navbar-standard-white);
+  --date-color: rgba(163, 163, 163, 0.559);
+}
+
+::-moz-selection {
+  color: var(--standard-light-background-black);
+  background: var(--standard-white);
+}
+
+body {
+  font-family: 'Roboto';
+  background-color: var(--standard-background-black);
+}
+
+/* ----------------------------------- */
+
+/* Home page */
+
+.home-main {
+  margin-top: 12%;
+  width: 70%;
+  margin-left: 15%;
+  max-width: 1000px;
+  padding-left: 5%;
+}
+
+.home-title-text {
+  color: var(--standard-white);
+  font-family: 'Bebas Neue';
+  letter-spacing: 2px;
+  font-size: 40pt;
+}
+
+.home-body,
+.home-body1 {
+  width: 45%;
+  margin-top: 80px;
+}
+
+.home-body-text,
+.home-body-text1 {
+  padding-left: 5px;
+  color: var(--standard-white);
+  font-family: 'Merriweather';
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+.home-body1 {
+  text-align: right;
+  padding-left: 47%;
+}
+/* ----------------------------------- */
+
+/* Navigation Bar */
+
+#navigationBar {
+  background: var(--standard-background-black);
+  height: auto;
+  text-align: center;
+  width: 100%;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#navigationBar > ul > li {
+  display: inline;
+}
+
+#navigationBar > ul > li > a {
+  color: var(--navbar-standard-white);
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  margin: 0px;
+  padding: 0px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease-in;
+  letter-spacing: 1px;
+}
+
+#navigationBar > ul > li > a:hover {
+  color: var(--hover-white);
+  text-shadow: 0rem 0rem 0.3rem var(--hover-text-shadow);
+}
+
+/* About Us Page */
+.about-main {
+  background-color: var(--standard-background-black);
+  text-align: center;
+  width: 50%;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1%;
+  margin-top: 10%;
+}
+.about-us-title {
+  color: var(--standard-white);
+  letter-spacing: 3px;
+}
+.about-content {
+  color: var(--standard-white);
+  letter-spacing: 1px;
+}
+
+/* ----------------------------------- */
+
+/* blogs page */
+
+.each-blog {
+  border-left: 2.5pt solid var(--blog-border);
+  border-radius: 8px;
+  margin-bottom: 40px;
+  padding-left: 18px;
+  display: grid;
+  align-items: center;
+  max-width: 50%;
+  margin-left: 26%;
+  margin-top: 50pt;
+  background-color: var(--standard-light-background-black);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+.each-blog:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 2px 2px rgb(250, 255, 247, 0.15);
+}
+.blog-title-link {
+  text-decoration: none;
+}
+
+.blog-title {
+  color: var(--standard-white);
+  letter-spacing: 1px;
+}
+
+.blog-snippet {
+  color: var(--snippet-text);
+  font-style: italic;
+}
+
+.blog-date {
+  color: var(--date-color);
+  margin-left: 88%;
+  margin-right: 5%;
+  margin-bottom: 4%;
+}
+
+.no-blogs-show-text {
+  margin-top: 18%;
+  margin-left: 46%;
+  color: rgba(170, 170, 170, 1);
+  font-family: 'Roboto thin';
+}
+
+/* ----------------------------------- */
+
+/* Blog form */
+.form-main-body {
+  padding-top: 50px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 50px;
+  background-color: var(--standard-light-background-black);
+  border-radius: 10px 10px 10px 10px;
+}
+
+.form-title,
+.form-snippet,
+.form-body,
+.form-btn {
+  padding: 2px 30px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.form-title-input,
+.form-snippet-input,
+.form-body-input,
+.form-btn-btn {
+  width: 90%;
+  height: 35px;
+  padding: 3px 6px;
+  background: var(--standard-background-black);
+  border: none;
+  border-radius: 8px 8px 8px 8px;
+  color: var(--standard-white);
+  font-size: 16pt;
+  transition: outline 0s ease-in-out;
+  letter-spacing: 2px;
+}
+
+.form-title-input:hover,
+.form-snippet-input:hover,
+.form-body-input:hover,
+.form-btn-btn:hover {
+  outline: none;
+}
+
+.form-body-input {
+  height: 300px;
+  resize: vertical;
+}
+
+.form-title-input:focus,
+.form-snippet-input:focus,
+.form-body-input:focus {
+  outline: 1pt inset white;
+  color: white;
+}
+
+.form-btn-btn {
+  width: 100px;
+  height: 40px;
+  color: rgb(160, 160, 160);
+  transition: color 0.3s, background-color 0.3s;
+  margin-bottom: 25px;
+}
+
+.form-btn-btn:hover {
+  background-color: white;
+  color: var(--standard-background-black);
+  cursor: pointer;
+}
+
+/* ----------------------------------- */
+
+/* detail body */
+
+.detail-main {
+  border: 1px inset var(--standard-white);
+  margin-top: 7%;
+  width: 66%;
+  margin-left: 16%;
+  margin-bottom: 80px;
+}
+
+.detail-head {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+}
+
+.detail-head-btn {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.detail-head-text {
+  color: var(--standard-white);
+  font-family: 'Bebas Neue';
+  letter-spacing: 3px;
+  font-size: 50pt;
+}
+
+.detail-edit,
+.detail-delete {
+  color: white;
+  background: var(--standard-background-black);
+  border: 1px inset var(--standard-white);
+  border-radius: 30% 30% 30% 30%;
+  padding: 8px 8px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 0pt;
+}
+
+.detail-snippet {
+  margin-left: 30px;
+}
+.detail-snippet-text {
+  font-style: italic;
+  color: rgba(150, 150, 150, 1);
+}
+
+.detail-date {
+  margin-right: 5px;
+  margin-left: 80%;
+}
+
+.detail-date-text {
+  color: rgba(150, 150, 150, 1);
+  font-size: 10pt;
+}
+
+.detail-body {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 50px;
+}
+
+.detail-body-text {
+  white-space: pre-line;
+  font-size: 13pt;
+  letter-spacing: 1px;
+  color: rgba(230, 230, 230, 1);
+  line-height: 1.4;
+  font-family: 'Merriweather';
+}

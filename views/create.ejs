@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="form-main-body">
+      <form class="form-create" action="/blogs" method="post">
+        <div class="form-title">
+          <input
+            type="text"
+            class="form-title-input"
+            name="title"
+            placeholder="Title"
+            autocomplete="off"
+            minlength="40"
+            maxlength="150"
+            required
+          />
+        </div>
+        <div class="form-snippet">
+          <input
+            type="text"
+            class="form-snippet-input"
+            name="snippet"
+            placeholder="Snippet"
+            autocomplete="off"
+            minlength="40"
+            maxlength="150"
+            required
+          />
+        </div>
+        <div class="form-body">
+          <textarea
+            class="form-body-input"
+            name="body"
+            rows="200"
+            cols="500"
+            placeholder="Body"
+            autocomplete="off"
+            minlength="500"
+            maxlength="10000"
+            required
+          ></textarea>
+        </div>
+        <div class="form-btn">
+          <button class="form-btn-btn">Post</button>
+        </div>
+      </form>
+    </div>
+    <%-include("./partials/footer.ejs") %>
+  </body>
+</html>
